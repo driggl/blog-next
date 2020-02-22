@@ -113,7 +113,7 @@ const Home = () => {
           flex-direction: column;
         }
         .has-mask .container .title {
-          color: $white;
+          color: #fff; // $white;
         }
       `}</style>
     </div>
