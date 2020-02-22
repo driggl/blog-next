@@ -1,20 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Head from '../components/head';
 import Nav from '../components/nav';
+import '../assets/sass/general.sass';
 
 const Home = () => {
-  const [date, setDate] = useState(null);
-
-  useEffect(() => {
-    async function getDate() {
-      const res = await fetch('/api/date');
-      const newDate = await res.json();
-      setDate(newDate);
-    }
-    getDate();
-  }, []);
-
   return (
     <div>
       <Head title="Home" />
