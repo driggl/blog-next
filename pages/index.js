@@ -8,122 +8,112 @@ const Home = () => {
   return (
     <div>
       <Head title="Home" />
-      <Nav />
+      {/* <Nav /> */}
 
-      <div className="hero">
-        <h1 className="title">Welcome to Next!</h1>
-        <p className="description">
-          To get started, edit the <code>pages/index.js</code> or{' '}
-          <code>pages/api/date.js</code> files, then save to reload.
-        </p>
-
-        <p className="row date">
-          The date is:&nbsp;{' '}
-          {date ? (
-            <span>
-              <b>{date.date}</b>
-            </span>
-          ) : (
-            <span className="loading"></span>
-          )}
-        </p>
-
-        <div className="row">
-          <Link href="https://github.com/zeit/next.js#setup">
-            <a className="card">
-              <h3>Getting Started &rarr;</h3>
-              <p>Learn more about Next.js on GitHub and in their examples.</p>
-            </a>
-          </Link>
-          <Link href="https://github.com/zeit/next.js/tree/master/examples">
-            <a className="card">
-              <h3>Examples &rarr;</h3>
-              <p>Find other example boilerplates on the Next.js GitHub.</p>
-            </a>
-          </Link>
-          <Link href="https://github.com/zeit/next.js">
-            <a className="card">
-              <h3>Create Next App &rarr;</h3>
-              <p>Was this tool helpful? Let us know how we can improve it!</p>
-            </a>
-          </Link>
-        </div>
+      <div>
+        {/* <top-nav /> */}
+        <section
+          className="hero has-background-image"
+          // style={{backgroundImage: url('/home-cover.jpg')}}
+        >
+          <div className="hero-body has-mask">
+            <div className="container has-text-right">
+              <h1 className="title">
+                Wanna be a developer?
+              </h1>
+              <a
+                href="#courses"
+                className="button is-primary has-text-weight-bold is-large"
+              >
+                Check out our courses!
+              </a>
+            </div>
+          </div>
+        </section>
+        <section className="section hero">
+          <div className="hero-body">
+            <div className="container has-text-centered">
+              <h2 className="title">
+                Experienced & Trusted by
+                <strong><span className="has-text-orange">700+</span></strong> People
+                worldwide
+              </h2>
+              <a
+                href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB"
+                className="button is-primary has-text-weight-bold is-large"
+              >
+                Start learning now!
+              </a>
+            </div>
+          </div>
+        </section>
+        <section id="courses" className="section">
+          <div className="columns">
+            <div className="column is-one-half">
+              <img src="/rails-rest-api.jpg" />
+            </div>
+            <div className="column is-one-half">
+              <div className="content">
+                <h2 className="title">Ruby On Rails REST API</h2>
+                <h3 className="subtitle is-5">The complete guide</h3>
+                <p className="is-size-3">
+                  Create professional API applications that you can hook anything
+                  into! Learn how to code like professionals using Test Driven
+                  Development!
+                </p>
+              </div>
+              <a
+                href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB"
+                target="_blank"
+                className="button is-primary has-text-weight-bold is-large"
+              >
+                Take this course for 10$ >
+              </a>
+            </div>
+          </div>
+        </section>
+        <section className="hero section">
+          <div className="hero-body">
+            <div className="container has-text-centered">
+              <h2 className="title">
+                Not sure if it's for you?
+              </h2>
+              <h3 className="subtitle">
+                No worries, we offer
+                <strong><span className="has-text-orange">30-day</span></strong>
+                money-back!
+              </h3>
+              <a
+                href="https://www.udemy.com/ruby-on-rails-api-the-complete-guide/?couponCode=DGLWEB"
+                className="button is-primary has-text-weight-bold is-large"
+              >
+                Check it out!
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
 
       <style jsx>{`
-        .hero {
-          width: 100%;
-          color: #333;
+        .hero.has-background-image {
+          background-image: url('/home-cover.jpg');
+          background-size: cover;
+          backgorund-position: center;
         }
-        .title {
-          margin: 0;
-          width: 100%;
-          padding-top: 80px;
-          line-height: 1.15;
-          font-size: 48px;
-        }
-        .title,
-        .description {
-          text-align: center;
-        }
-        .row {
-          max-width: 880px;
-          margin: 80px auto 40px;
+        .has-mask {
+          min-height: 600px;
+          background-color: rgba(0,0,0,0.65);
           display: flex;
-          flex-direction: row;
-          justify-content: space-around;
+
         }
-        .date {
-          height: 24px;
-          max-width: calc(100% - 32px)
-          text-align: center;
+        .has-mask .container {
           display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0 16px;
+          align-self: center;
+          align-items: flex-end;
+          flex-direction: column;
         }
-        .date p {
-          text-align: center;
-        }
-        .date span {
-          width: 176px;
-          text-align: center;
-        }
-        @keyframes Loading {
-          0%{background-position:0% 50%}
-          50%{background-position:100% 50%}
-          100%{background-position:0% 50%}
-        }
-        .date .loading {
-          max-width: 100%;
-          height: 24px;
-          border-radius: 4px;
-          display: inline-block;
-          background: linear-gradient(270deg, #D1D1D1, #EAEAEA);
-          background-size: 200% 200%;
-          animation: Loading 2s ease infinite;
-        }
-        .card {
-          padding: 18px 18px 24px;
-          width: 220px;
-          text-align: left;
-          text-decoration: none;
-          color: #434343;
-          border: 1px solid #9b9b9b;
-        }
-        .card:hover {
-          border-color: #067df7;
-        }
-        .card h3 {
-          margin: 0;
-          color: #067df7;
-          font-size: 18px;
-        }
-        .card p {
-          margin: 0;
-          padding: 12px 0 0;
-          font-size: 13px;
-          color: #333;
+        .has-mask .container .title {
+          color: $white;
         }
       `}</style>
     </div>
