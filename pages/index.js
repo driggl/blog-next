@@ -9,7 +9,7 @@ const Home = () => {
     <div>
       <Head
         title="Driggl title"
-        ogImage="https://driggl-prod.s3.eu-central-1.amazonaws.com/suggester/blogs/99a95609-d8fd-4a84-994c-2386fd1c15de/uploads/3792710c-94ac-4173-98fd-5e85e061f2f9/sharing.jpeg"
+        ogImage="/home-cover.jpg"
       />
       {/* <Nav /> */}
 
