@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import Logo from './logo'
+import '../assets/sass/general.sass';
 
 const links = [
   { href: 'https://zeit.co/now', label: 'ZEIT' },
@@ -10,45 +12,49 @@ const links = [
 });
 
 const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
+  <nav className="container navbar" role="navigation" aria-label="main navigation">
+    <div className="navbar-brand">
+      <a href="/" className="navbar-item">
+        <Logo />
+      </a>
 
+      <a
+        role="button"
+        className="navbar-burger burger"
+        // className="{ 'is-active': expanded }"
+        aria-label="menu"
+        // :aria-expanded="expanded"
+        data-target="navbarTop"
+        // @click="expanded = !expanded"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div
+      id="navbarTop"
+      className="navbar-menu"
+      // :className="{ 'is-active': expanded }"
+    >
+      <div className="navbar-start"></div>
+
+      <div className="navbar-end">
+        <a href="https://driggl.com/blog" className="navbar-item">
+          Blog
+        </a>
+
+        <a href="/#courses" className="navbar-item">
+          Courses
+        </a>
+
+        <a href="https://patreon.com/driggl" target="_blank" className="navbar-item">
+          Support
+        </a>
+      </div>
+    </div>
     <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
     `}</style>
   </nav>
 );
