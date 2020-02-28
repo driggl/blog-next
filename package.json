@@ -7,8 +7,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
+    "dev": "NODE_PATH=. next",
+    "build": "NODE_PATH=. next build",
     "start": "next start"
   },
   "dependencies": {

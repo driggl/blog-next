@@ -1,6 +1,6 @@
+// import Logo from 'components/logo';
 import React from 'react';
 import Link from 'next/link';
-import Logo from './logo'
 import '../assets/sass/general.sass';
 
 const links = [
@@ -15,7 +15,7 @@ const Nav = () => (
   <nav className="container navbar" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
       <a href="/" className="navbar-item">
-        <Logo />
+        <div className="logo"></div>
       </a>
 
       <a
@@ -55,6 +55,13 @@ const Nav = () => (
       </div>
     </div>
     <style jsx>{`
+      .logo {
+        width: 83px;
+        height: 28px;
+        display: block;
+        background-image: url("/logo-small.png");
+        background-size: 83px 28px;
+      }
     `}</style>
   </nav>
 );
