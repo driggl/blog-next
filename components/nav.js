@@ -41,9 +41,9 @@ const Nav = () => (
       <div className="navbar-start"></div>
 
       <div className="navbar-end">
-        <a href="https://driggl.com/blog" className="navbar-item">
-          Blog
-        </a>
+        <Link href="/blog">
+          <a  className="navbar-item">Blog</a>
+        </Link>
 
         <a href="/#courses" className="navbar-item">
           Courses
