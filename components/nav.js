@@ -1,7 +1,7 @@
-// import Logo from 'components/logo';
 import React from 'react';
 import Link from 'next/link';
-import '../assets/sass/general.sass';
+import Logo from 'components/logo';
+import 'assets/sass/general.sass';
 
 const links = [
   { href: 'https://zeit.co/now', label: 'ZEIT' },
@@ -15,7 +15,7 @@ const Nav = () => (
   <nav className="container navbar" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
       <a href="/" className="navbar-item">
-        <div className="logo"></div>
+        <Logo />
       </a>
 
       <a
@@ -55,13 +55,6 @@ const Nav = () => (
       </div>
     </div>
     <style jsx>{`
-      .logo {
-        width: 83px;
-        height: 28px;
-        display: block;
-        background-image: url("/logo-small.png");
-        background-size: 83px 28px;
-      }
     `}</style>
   </nav>
 );
