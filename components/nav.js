@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import Logo from './logo'
-import '../assets/sass/general.sass';
+import Logo from 'components/logo';
+import 'assets/sass/general.sass';
 
 const links = [
   { href: 'https://zeit.co/now', label: 'ZEIT' },
@@ -41,9 +41,9 @@ const Nav = () => (
       <div className="navbar-start"></div>
 
       <div className="navbar-end">
-        <a href="https://driggl.com/blog" className="navbar-item">
-          Blog
-        </a>
+        <Link href="/blog">
+          <a  className="navbar-item">Blog</a>
+        </Link>
 
         <a href="/#courses" className="navbar-item">
           Courses

@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Head from '../components/head';
 import Nav from '../components/nav';
 import '../assets/sass/general.sass';
