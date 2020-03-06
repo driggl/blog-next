@@ -5,7 +5,7 @@ import { string } from 'prop-types';
 const Item = (props) =>{
   return (
     <div className="card">
-      <Link href="/a/[slug]" as={`/a/${props.slug}`}>
+      <Link href="blog/a/[slug]" as={`/blog/a/${props.slug}`}>
         <div className="columns">
           <div className="column is-half">
             <figure className="image">
