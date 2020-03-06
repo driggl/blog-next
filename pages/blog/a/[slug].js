@@ -46,7 +46,7 @@ const Article = ({article}) => {
         <div className="cover social">
           <img
             src={
-              article.attributes.thumbnail.sharing.replace(
+              article.attributes.thumbnail["sharing-square"].replace(
                 'https://driggl-prod.s3.eu-central-1.amazonaws.com',
                 'https://blog-next.driggl.now.sh/api/images'
               )
