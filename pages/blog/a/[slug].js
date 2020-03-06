@@ -23,7 +23,7 @@ const Article = ({article}) => {
           )
         }
         ogType="website"
-        url="https://driggl.com/blog"
+        url={ `https://driggl.com/blog/a/${article.attributes.slug}`}
         twitterSite="@drigglweb"
         twitterCreator="@sebwilgosz"
         twitterTitle={article.attributes.title}
