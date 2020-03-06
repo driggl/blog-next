@@ -4,6 +4,8 @@ import Nav from '../../components/nav';
 import '../../assets/sass/general.sass';
 import ArticleList from '../../components/article-list'
 import fetch from 'isomorphic-unfetch';
+import absoluteUrl from 'next-absolute-url'
+
 
 const Blog = (props) => {
   return (
@@ -43,10 +45,11 @@ const Blog = (props) => {
   );
 };
 
-Blog.getInitialProps = async function() {
-  const res = await fetch('https://api.sourcerio.com/v1/blogs/driggl/articles');
+Blog.getInitialProps = async function(context) {
+  const { origin } = absoluteUrl(context.req)
+  var url = new URL("/api/articles?page[number]=1&page[size]=10", origin)
+  const res = await fetch(url.toString());
   const data = await res.json();
-  console.log(`Show data fetched. Count: ${data.data.length}`);
 
   return {
     articles: data.data.map(entry => entry)

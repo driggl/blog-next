@@ -8,11 +8,12 @@ const List = (props) =>{
       {props.articles.map(({id, attributes}) => (
         <ArticleListItem
           key={id}
+          id={id}
           title={attributes.title}
           excerpt={attributes.excerpt}
           slug={attributes.slug}
           category='Web development'
-          thumbnail={attributes.thumbnail.small}
+          thumbnail={attributes.thumbnail.small.replace('https://driggl-prod.s3.eu-central-1.amazonaws.com', '/api/images')}
           author="Sebastian Wilgosz"
         />
       ))}
