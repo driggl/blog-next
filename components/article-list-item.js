@@ -1,38 +1,41 @@
 import React from 'react';
 import Link from 'next/link';
 import { string } from 'prop-types';
+import absoluteUrl from 'next-absolute-url'
 
 const Item = (props) =>{
   return (
     <div className="card">
       <Link href="blog/a/[slug]" as={`/blog/a/${props.slug}`}>
-        <div className="columns">
-          <div className="column is-half">
-            <figure className="image">
-              <img src={props.thumbnail} alt="Placeholder image" />
-            </figure>
-          </div>
-          <div className="card-content">
-            <h3 className="title is-5">{ props.title }</h3>
-            <div className="article-meta">
-              <span>Category: </span><strong>{ props.category }</strong>
-              <span>Author: </span><strong>{ props.author }</strong>
+        <a>
+          <div className="columns">
+            <div className="column is-half">
+              <figure className="image">
+                <img src={ props.thumbnail } alt="Placeholder image" />
+              </figure>
             </div>
-            <div className="content">
-              <p>{ props.excerpt }</p>
-            </div>
-            <div className="level">
-              <div className="level-left"></div>
-              <div className="level-right">
-                <div className="level-item">
-                  <a href="/" className="readmore">
-                    read more...
-                  </a>
+            <div className="card-content">
+              <h3 className="title is-5">{ props.title }</h3>
+              <div className="article-meta">
+                <span>Category: </span><strong>{ props.category }</strong>
+                <span>Author: </span><strong>{ props.author }</strong>
+              </div>
+              <div className="content">
+                <p>{ props.excerpt }</p>
+              </div>
+              <div className="level">
+                <div className="level-left"></div>
+                <div className="level-right">
+                  <div className="level-item">
+                    <span className="readmore">
+                      read more...
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </a>
       </Link>
       <style jsx>{`
         .article-meta {
@@ -89,4 +92,3 @@ Item.propTypes = {
 };
 
 export default Item;
-

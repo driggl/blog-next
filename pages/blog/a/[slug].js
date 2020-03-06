@@ -3,7 +3,7 @@ import Head from 'components/head';
 import Nav from 'components/nav';
 import 'assets/sass/general.sass';
 import fetch from 'isomorphic-unfetch';
-import { useRouter } from 'next/router';
+import absoluteUrl from 'next-absolute-url'
 
 const Article = ({article}) => {
   return (
@@ -17,10 +17,10 @@ const Article = ({article}) => {
         ogType="article"
         ogDescription={article.attributes.excerpt}
         ogImage={
-          article.attributes.thumbnail.sharing //.replace(
-            // "https://driggl-prod.s3.eu-central-1.amazonaws.com",
-            // "/images"
-          // )
+          article.attributes.thumbnail.sharing.replace(
+            "https://driggl-prod.s3.eu-central-1.amazonaws.com",
+            "/api/images"
+          )
         }
         ogType="website"
         url="https://driggl.com/blog"
@@ -36,20 +36,20 @@ const Article = ({article}) => {
         style={{
           'backgroundImage':
             'url(' +
-            article.attributes.thumbnail.full + //.replace(
-              // 'https://driggl-prod.s3.eu-central-1.amazonaws.com',
-        //       '/images'
-        //     ) +
+            article.attributes.thumbnail.full.replace(
+              'https://driggl-prod.s3.eu-central-1.amazonaws.com',
+              '/api/images'
+            ) +
             ')'
         }}
       >
         <div className="cover social">
           <img
             src={
-              article.attributes.thumbnail.sharing //.replace(
-                // 'https://driggl-prod.s3.eu-central-1.amazonaws.com',
-                // '/images'
-              // )
+              article.attributes.thumbnail.sharing.replace(
+                'https://driggl-prod.s3.eu-central-1.amazonaws.com',
+                '/api/images'
+              )
               }
           />
         </div>
@@ -134,10 +134,10 @@ const Article = ({article}) => {
 
 Article.getInitialProps = async function(context) {
   const { slug } = context.query
-  const res = await fetch(`https://api.sourcerio.com/v1/blogs/driggl/articles/${slug}`);
+  const { origin } = absoluteUrl(context.req)
+  var url = new URL(`/api/articles/${slug}`, origin)
+  const res = await fetch(url.toString());
   const data = await res.json();
-  console.log("fetched");
-  console.log(data.data);
 
   return {
     article: data.data
