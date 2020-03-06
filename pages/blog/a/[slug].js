@@ -43,16 +43,6 @@ const Article = ({article}) => {
             ')'
         }}
       >
-        <div className="cover social">
-          <img
-            src={
-              article.attributes.thumbnail["sharing-square"].replace(
-                'https://driggl-prod.s3.eu-central-1.amazonaws.com',
-                'https://blog-next.driggl.now.sh/api/images'
-              )
-              }
-          />
-        </div>
         <div className="hero-body">
           <div className="container has-text-centered">
             <h1 className="title">
@@ -69,6 +59,16 @@ const Article = ({article}) => {
               <div className="article-meta">
                 <span>Category: </span><strong>Web development</strong>
                 <span>Author: </span><strong>Sebastian Wilgosz</strong>
+              </div>
+              <div className="cover social">
+                <img
+                  src={
+                    article.attributes.thumbnail["sharing-square"].replace(
+                      'https://driggl-prod.s3.eu-central-1.amazonaws.com',
+                      'https://blog-next.driggl.now.sh/api/images'
+                    )
+                    }
+                />
               </div>
               <div
                 className="content is-spaced"
