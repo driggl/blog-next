@@ -18,8 +18,8 @@ const Article = ({article}) => {
         ogDescription={article.attributes.excerpt}
         ogImage={
           article.attributes.thumbnail.sharing.replace(
-            "https://driggl-prod.s3.eu-central-1.amazonaws.com",
-            "https://blog-next.driggl.now.sh/api/images"
+            'https://driggl-prod.s3.eu-central-1.amazonaws.com',
+            'https://blog-next.driggl.now.sh/api/images'
           )
         }
         ogType="website"
@@ -38,7 +38,7 @@ const Article = ({article}) => {
             'url(' +
             article.attributes.thumbnail.full.replace(
               'https://driggl-prod.s3.eu-central-1.amazonaws.com',
-              'https://blog-next.driggl.now.sh/api/images/api/images'
+              'https://blog-next.driggl.now.sh/api/images'
             ) +
             ')'
         }}
