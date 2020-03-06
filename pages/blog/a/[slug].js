@@ -19,7 +19,7 @@ const Article = ({article}) => {
         ogImage={
           article.attributes.thumbnail.sharing.replace(
             "https://driggl-prod.s3.eu-central-1.amazonaws.com",
-            "/api/images"
+            "https://blog-next.driggl.now.sh/api/images"
           )
         }
         ogType="website"
@@ -38,7 +38,7 @@ const Article = ({article}) => {
             'url(' +
             article.attributes.thumbnail.full.replace(
               'https://driggl-prod.s3.eu-central-1.amazonaws.com',
-              '/api/images'
+              'https://blog-next.driggl.now.sh/api/images/api/images'
             ) +
             ')'
         }}
@@ -48,7 +48,7 @@ const Article = ({article}) => {
             src={
               article.attributes.thumbnail.sharing.replace(
                 'https://driggl-prod.s3.eu-central-1.amazonaws.com',
-                '/api/images'
+                'https://blog-next.driggl.now.sh/api/images'
               )
               }
           />
